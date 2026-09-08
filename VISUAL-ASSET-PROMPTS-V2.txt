@@ -1,0 +1,56 @@
+Built-in image_gen; one request per asset. All scenes are fictional illustrations.
+
+1. home-business.png
+
+Primary request: Black South African businesswoman in modern urban Johannesburg office, laptop back visible, large city windows, confident candid business posture. Subject on right, room on left. Clean dark emerald shadows, bright realistic premium fintech campaign. Absolutely no abstract sculpture.
+Use case: photorealistic-natural. Asset type: premium fintech website editorial image. Generate one landscape image 1536x1024. Style: cohesive premium documentary/editorial photography, modern South African context, tasteful green accents, realistic natural people, sophisticated composition, believable materials, crisp photographic detail. These are fictional illustrative scenes, not actual PayMint customers, staff or offices. Avoid all logos, readable text, watermarks, invented UI, charts, account balances, credit cards, payment terminals or POS devices. No illustration, no 3D render, no collage.
+
+2. business-workshop.png
+
+Primary request: South African entrepreneur in a contemporary small furniture workshop reviewing work with a colleague, wide environmental detail, authentic finished wood, natural workshop daylight.
+Use case: photorealistic-natural. Asset type: premium fintech website editorial image. Generate one landscape image 1536x1024. Style: cohesive premium documentary/editorial photography, modern South African context, tasteful green accents, realistic natural people, sophisticated composition, believable materials, crisp photographic detail. These are fictional illustrative scenes, not actual PayMint customers, staff or offices. Avoid all logos, readable text, watermarks, invented UI, charts, account balances, credit cards, payment terminals or POS devices. No illustration, no 3D render, no collage.
+
+3. payouts-suppliers.png
+
+Primary request: South African small business owner and supplier reviewing packaged inventory at a boutique distribution workspace, no screens visible. Wide scene showing thoughtful collaboration and orderly packages.
+Use case: photorealistic-natural. Asset type: premium fintech website editorial image. Generate one landscape image 1536x1024. Style: cohesive premium documentary/editorial photography, modern South African context, tasteful green accents, realistic natural people, sophisticated composition, believable materials, crisp photographic detail. These are fictional illustrative scenes, not actual PayMint customers, staff or offices. Avoid all logos, readable text, watermarks, invented UI, charts, account balances, credit cards, payment terminals or POS devices. No illustration, no 3D render, no collage.
+
+4. payroll-finance.png
+
+Primary request: South African finance professional at an organized desk checking documents and a laptop with screen facing away, morning light in a modern office. Candid focused posture.
+Use case: photorealistic-natural. Asset type: premium fintech website editorial image. Generate one landscape image 1536x1024. Style: cohesive premium documentary/editorial photography, modern South African context, tasteful green accents, realistic natural people, sophisticated composition, believable materials, crisp photographic detail. These are fictional illustrative scenes, not actual PayMint customers, staff or offices. Avoid all logos, readable text, watermarks, invented UI, charts, account balances, credit cards, payment terminals or POS devices. No illustration, no 3D render, no collage.
+
+5. finance-enterprise.png
+
+Primary request: South African female small manufacturing owner surveying her orderly textile studio, rolls of cloth and worktables visible, business growth editorial, environmental portrait.
+Use case: photorealistic-natural. Asset type: premium fintech website editorial image. Generate one landscape image 1536x1024. Style: cohesive premium documentary/editorial photography, modern South African context, tasteful green accents, realistic natural people, sophisticated composition, believable materials, crisp photographic detail. These are fictional illustrative scenes, not actual PayMint customers, staff or offices. Avoid all logos, readable text, watermarks, invented UI, charts, account balances, credit cards, payment terminals or POS devices. No illustration, no 3D render, no collage.
+
+6. employees-city.png
+
+Primary request: South African professional leaving a modern office into city daylight carrying a bag, optimistic candid urban lifestyle, walking naturally. No phone, no cafe.
+Use case: photorealistic-natural. Asset type: premium fintech website editorial image. Generate one landscape image 1536x1024. Style: cohesive premium documentary/editorial photography, modern South African context, tasteful green accents, realistic natural people, sophisticated composition, believable materials, crisp photographic detail. These are fictional illustrative scenes, not actual PayMint customers, staff or offices. Avoid all logos, readable text, watermarks, invented UI, charts, account balances, credit cards, payment terminals or POS devices. No illustration, no 3D render, no collage.
+
+7. wellness-home.png
+
+Primary request: South African young adult planning household papers at a sunny home table, calculator and mug, document text unreadable, calm natural candid scene.
+Use case: photorealistic-natural. Asset type: premium fintech website editorial image. Generate one landscape image 1536x1024. Style: cohesive premium documentary/editorial photography, modern South African context, tasteful green accents, realistic natural people, sophisticated composition, believable materials, crisp photographic detail. These are fictional illustrative scenes, not actual PayMint customers, staff or offices. Avoid all logos, readable text, watermarks, invented UI, charts, account balances, credit cards, payment terminals or POS devices. No illustration, no 3D render, no collage.
+
+8. platform-workspace.png
+
+Primary request: Elegant workstation seen from side/back angle, widescreen monitor and tablet silhouettes in a contemporary South African office, screens turned away with no UI, subtle emerald accent light, credible business technology.
+Use case: photorealistic-natural. Asset type: premium fintech website editorial image. Generate one landscape image 1536x1024. Style: cohesive premium documentary/editorial photography, modern South African context, tasteful green accents, realistic natural people, sophisticated composition, believable materials, crisp photographic detail. These are fictional illustrative scenes, not actual PayMint customers, staff or offices. Avoid all logos, readable text, watermarks, invented UI, charts, account balances, credit cards, payment terminals or POS devices. No illustration, no 3D render, no collage.
+
+9. developers-team.png
+
+Primary request: Diverse South African engineers collaborating at a contemporary technology studio, monitors oblique with indistinct content, candid teamwork, natural gestures.
+Use case: photorealistic-natural. Asset type: premium fintech website editorial image. Generate one landscape image 1536x1024. Style: cohesive premium documentary/editorial photography, modern South African context, tasteful green accents, realistic natural people, sophisticated composition, believable materials, crisp photographic detail. These are fictional illustrative scenes, not actual PayMint customers, staff or offices. Avoid all logos, readable text, watermarks, invented UI, charts, account balances, credit cards, payment terminals or POS devices. No illustration, no 3D render, no collage.
+
+10. security-infrastructure.png
+
+Primary request: Crisp realistic server aisle with dark cabinets, subtle green and white indicator lights, editorial technology photograph. No fantasy shields or padlocks. This is an illustrative facility.
+Use case: photorealistic-natural. Asset type: premium fintech website editorial image. Generate one landscape image 1536x1024. Style: cohesive premium documentary/editorial photography, modern South African context, tasteful green accents, realistic natural people, sophisticated composition, believable materials, crisp photographic detail. These are fictional illustrative scenes, not actual PayMint customers, staff or offices. Avoid all logos, readable text, watermarks, invented UI, charts, account balances, credit cards, payment terminals or POS devices. No illustration, no 3D render, no collage.
+
+11. partners-meeting.png
+
+Primary request: Three South African business professionals in a collaborative meeting around a round table near city office windows. Natural discussion and listening, no handshake cliché.
+Use case: photorealistic-natural. Asset type: premium fintech website editorial image. Generate one landscape image 1536x1024. Style: cohesive premium documentary/editorial photography, modern South African context, tasteful green accents, realistic natural people, sophisticated composition, believable materials, crisp photographic detail. These are fictional illustrative scenes, not actual PayMint customers, staff or offices. Avoid all logos, readable text, watermarks, invented UI, charts, account balances, credit cards, payment terminals or POS devices. No illustration, no 3D render, no collage.

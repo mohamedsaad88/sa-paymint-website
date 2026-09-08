@@ -1,32 +1,51 @@
-# PayMint South Africa
+# PayMint South Africa website
 
-A responsive multi-page marketing website built with TypeScript, React 19, Tailwind CSS 4 and Next.js App Router conventions, running on Vinext for Cloudflare Workers / Sites deployment. The starter is the official Sites scaffold; this is not a stock Next.js server deployment.
+Local editable website: `~/Sites/paymint/paymint-sa-website/`.
 
-## Development
+## Run
 
-- Node >=22.13
-- `npm install`
-- `npm run dev`
-- `npm run build`
-- `npm run start` runs the built Worker locally.
-- `npx tsc --noEmit` and `npm run lint` validate source.
+Use Node >=22.13 and npm:
 
-## Architecture
+```sh
+npm ci
+npm run dev
+```
 
-- `lib/content.ts`: navigation, enquiry interests, typed solution-page content.
-- `app/[slug]/page.tsx`: reusable product routes and company-page routing with metadata and 404 handling.
-- `components/site`: shared navigation/footer, product illustrations, company content, insights filter and enquiry form.
-- `app/api/enquiries/route.ts`: validated same-origin server-side enquiry delivery.
-- `app/globals.css`: shared tokens, layouts, responsive design and reduced-motion handling.
+Open the Local URL printed by the server (normally http://localhost:3000). Install dependencies in a new checkout with `npm ci`; do not copy a dependency tree while recursively excluding folders named `dist`.
 
-## Enquiry delivery
+## Stack and structure
 
-With no delivery destination configured, validated enquiries offer an explicit email draft to the verified public group email `info@paymint-eg.com`. Nothing is silently stored or falsely marked sent. The visitor must send the draft in their email client.
+TypeScript, React 19 and Tailwind CSS 4 with Next.js App Router conventions, running on Vinext for Cloudflare Workers / Sites. This is not a stock Next.js server deployment.
 
-To enable direct delivery, configure `LEAD_WEBHOOK_URL` (HTTPS only) and optional `LEAD_WEBHOOK_TOKEN` in the deployment runtime. The webhook must reliably accept the submitted enquiry and return 2xx. The token is used only server-side. Implement spam/rate limiting at the edge or receiving service before public launch; the route includes a honeypot, input bounds and same-origin validation but does not claim durable rate limiting. Do not put secrets in source. Verify delivery using an approved test inbox before launch.
+- `lib/content.ts`: source-grounded product copy, navigation, interest allowlist, own-key route lookup.
+- `lib/enquiry.ts`: pure local email-draft validation and encoding.
+- `lib/site.ts`: validated canonical origin (`SITE_URL`, HTTPS origin only).
+- `app/[slug]/page.tsx`: multi-page rendering, own-key metadata lookup and 404 handling.
+- `components/site`: shared presentation, navigation, official assets and email-preparation form.
+- `proxy.ts`: response security headers.
+- `app/globals.css`: responsive layouts and shared visual tokens.
 
-## Content and launch review
+## Contact
 
-See `CONTENT-SOURCES.md` for evidence and claims policy. Local product availability is not independently verified. Illustrations use fictional sample ZAR values and are visibly labelled. The editorial image is AI-generated and is not a customer or leadership photograph. No fabricated case studies, partner logos, news articles or open vacancies are included.
+This iteration intentionally uses email preparation, not direct submission. There is no webhook or public enquiry POST endpoint. Visitors enter their details, review the prepared text and send through their email application. Copy support handles systems without a mail client. The form is disabled until hydrated and provides a no-JavaScript email link. No enquiry details are stored in browser storage or sent by the website.
 
-Before public launch, PayMint should approve current leadership titles, product scope, jurisdiction-specific privacy/controller details and current security documentation; configure the lead destination; and replace the canonical origin with the approved custom domain in layout, sitemap and robots. Source build and local browser checks are recorded in `VERIFICATION.md`.
+## Checks
+
+```sh
+npx tsc --noEmit --incremental false
+npm run lint
+npm test
+npm run build
+npm run start -- --port 8787
+python3 scripts/verify-local.py http://localhost:8787
+```
+
+Unit tests run pure source modules without network access. The HTTP verification script allows loopback HTTP only and uses GET requests; it cannot send an enquiry. Use the production server for security-header verification.
+
+The bundled UI primitives retain upstream lint exclusions; application code is linted. The dependency lockfile is retained. `npm ci` installs the exact tree.
+
+## Review and release
+
+See `REVIEW.md`, `CONTENT-SOURCES.md` and `VERIFICATION.md`. Current copy follows the South African reference and clearly attributes Egypt-only background. Claims not supported by the reference have been removed.
+
+Before a custom-domain deployment, configure `SITE_URL` as the approved HTTPS origin. Browser QA remains a separately recorded requirement when the administrator browser policy check is unavailable. The hosted preview is not automatically changed by local edits.

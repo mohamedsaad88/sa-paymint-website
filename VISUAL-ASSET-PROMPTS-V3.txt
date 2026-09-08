@@ -1,0 +1,65 @@
+[
+  {
+    "number": 1,
+    "name": "payouts-logistics",
+    "prompt": "1. payouts-logistics\nGenerate exactly one distinct landscape 1536x1024 image. Use case: photorealistic-natural. Asset type: PayMint South Africa website editorial photograph. Primary request: close environmental still life of carefully packed supplier orders, a blank delivery docket and tablet face down in airy SME distribution studio, not piles of identical boxes.\nPremium believable editorial photography, subtle PayMint emerald accents, varied locations/compositions. All fictional editorial, no claim actual staff/customers/facilities. No logos, no legible text, amounts, charts or fake interface, no credit cards or POS devices. STRICTLY NO PEOPLE: also no hands, faces, reflections of people, or portraits on walls.",
+    "path": "/Users/mohamedsaad/.codex/.chatgpt-projects/g-p-67c7fe8be13481919f254be842d43ebd/output/paymint-balanced-v3/payouts-logistics.png",
+    "source": "/Users/mohamedsaad/.codex/generated_images/01a080ba-220b-7a70-943d-fb9f16cf61d3/exec-a1c30b96-bd29-4e7c-b36b-0c735b14b0ab.png"
+  },
+  {
+    "number": 2,
+    "name": "payroll-planning",
+    "prompt": "2. payroll-planning\nGenerate exactly one distinct landscape 1536x1024 image. Use case: photorealistic-natural. Asset type: PayMint South Africa website editorial photograph. Primary request: overhead clean business finance desk with calculator, closed laptop, pen and discreet blank planning pages, natural daylight, deliberate geometric composition, not fabricated financial figures.\nPremium believable editorial photography, subtle PayMint emerald accents, varied locations/compositions. All fictional editorial, no claim actual staff/customers/facilities. No logos, no legible text, amounts, charts or fake interface, no credit cards or POS devices. STRICTLY NO PEOPLE: also no hands, faces, reflections of people, or portraits on walls.",
+    "path": "/Users/mohamedsaad/.codex/.chatgpt-projects/g-p-67c7fe8be13481919f254be842d43ebd/output/paymint-balanced-v3/payroll-planning.png",
+    "source": "/Users/mohamedsaad/.codex/generated_images/01a080ba-220b-7a70-943d-fb9f16cf61d3/exec-49e795bf-9fe9-40bf-b15e-bc8c764042e3.png"
+  },
+  {
+    "number": 3,
+    "name": "enterprise-city",
+    "prompt": "3. enterprise-city\nGenerate exactly one distinct landscape 1536x1024 image. Use case: photorealistic-natural. Asset type: PayMint South Africa website editorial photograph. Primary request: cinematic South African coastal business district/harbour inspired by Durban, modern offices and port infrastructure at blue hour, focus economic landscape, no people/words, no exact landmark claim.\nPremium believable editorial photography, subtle PayMint emerald accents, varied locations/compositions. All fictional editorial, no claim actual staff/customers/facilities. No logos, no legible text, amounts, charts or fake interface, no credit cards or POS devices. STRICTLY NO PEOPLE: also no hands, faces, reflections of people, or portraits on walls.",
+    "path": "/Users/mohamedsaad/.codex/.chatgpt-projects/g-p-67c7fe8be13481919f254be842d43ebd/output/paymint-balanced-v3/enterprise-city.png",
+    "source": "/Users/mohamedsaad/.codex/generated_images/01a080ba-220b-7a70-943d-fb9f16cf61d3/exec-579f9cc9-3a99-4674-8c42-edabbb66af33.png"
+  },
+  {
+    "number": 4,
+    "name": "platform-devices",
+    "prompt": "4. platform-devices\nGenerate exactly one distinct landscape 1536x1024 image. Use case: photorealistic-natural. Asset type: PayMint South Africa website editorial photograph. Primary request: premium studio product photograph of unbranded monitor viewed from rear, closed laptop and tablet edge on pale cool grey seamless background, emerald soft light, polished real hardware, no people and NO screens visible, no sci-fi sculpture.\nPremium believable editorial photography, subtle PayMint emerald accents, varied locations/compositions. All fictional editorial, no claim actual staff/customers/facilities. No logos, no legible text, amounts, charts or fake interface, no credit cards or POS devices. STRICTLY NO PEOPLE: also no hands, faces, reflections of people, or portraits on walls.",
+    "path": "/Users/mohamedsaad/.codex/.chatgpt-projects/g-p-67c7fe8be13481919f254be842d43ebd/output/paymint-balanced-v3/platform-devices.png",
+    "source": "/Users/mohamedsaad/.codex/generated_images/01a080ba-220b-7a70-943d-fb9f16cf61d3/exec-52f04ab1-173a-44a1-8f06-dc84a8830ef1.png"
+  },
+  {
+    "number": 5,
+    "name": "security-network",
+    "prompt": "5. security-network\nGenerate exactly one distinct landscape 1536x1024 image. Use case: photorealistic-natural. Asset type: PayMint South Africa website editorial photograph. Primary request: close macro of fibre optic cabling connected to professional network equipment, crisp emerald and white indicator lights, shallow focus, realistic infrastructure, NO people, no shield/padlock imagery.\nPremium believable editorial photography, subtle PayMint emerald accents, varied locations/compositions. All fictional editorial, no claim actual staff/customers/facilities. No logos, no legible text, amounts, charts or fake interface, no credit cards or POS devices. STRICTLY NO PEOPLE: also no hands, faces, reflections of people, or portraits on walls.",
+    "path": "/Users/mohamedsaad/.codex/.chatgpt-projects/g-p-67c7fe8be13481919f254be842d43ebd/output/paymint-balanced-v3/security-network.png",
+    "source": "/Users/mohamedsaad/.codex/generated_images/01a080ba-220b-7a70-943d-fb9f16cf61d3/exec-d9e4e3d5-0d1d-4205-be7d-4b3864a3bf40.png"
+  },
+  {
+    "number": 6,
+    "name": "wellness-still-life",
+    "prompt": "6. wellness-still-life\nGenerate exactly one distinct landscape 1536x1024 image. Use case: photorealistic-natural. Asset type: PayMint South Africa website editorial photograph. Primary request: warm domestic tabletop with simple closed savings journal (no text), glass water, houseplant, smartphone face down and small dish, quiet afternoon sunlight, editorial financial-wellbeing context, NO people.\nPremium believable editorial photography, subtle PayMint emerald accents, varied locations/compositions. All fictional editorial, no claim actual staff/customers/facilities. No logos, no legible text, amounts, charts or fake interface, no credit cards or POS devices. STRICTLY NO PEOPLE: also no hands, faces, reflections of people, or portraits on walls.",
+    "path": "/Users/mohamedsaad/.codex/.chatgpt-projects/g-p-67c7fe8be13481919f254be842d43ebd/output/paymint-balanced-v3/wellness-still-life.png",
+    "source": "/Users/mohamedsaad/.codex/generated_images/01a080ba-220b-7a70-943d-fb9f16cf61d3/exec-950b4da0-67ab-4a51-9b6a-5b8ad3f3870f.png"
+  },
+  {
+    "number": 7,
+    "name": "business-diverse",
+    "prompt": "7. business-diverse\nGenerate exactly one distinct landscape 1536x1024 image. Use case: photorealistic-natural. Asset type: PayMint South Africa website editorial photograph. Primary request: three SME colleagues working together in contemporary South African design workshop: light-skinned White woman in her 40s, medium-brown South Asian man in 30s, dark-skinned Black woman in 30s, varied modern neutral clothing with emerald accents, candid natural scene; all 3 faces compose within central area for square crop.\nPremium believable editorial photography, subtle PayMint emerald accents, varied locations/compositions. All fictional editorial, no claim actual staff/customers/facilities. No logos, no legible text, amounts, charts or fake interface, no credit cards or POS devices. Visible diverse skin tones, ordinary authentic interactions, not posed token lineups.",
+    "path": "/Users/mohamedsaad/.codex/.chatgpt-projects/g-p-67c7fe8be13481919f254be842d43ebd/output/paymint-balanced-v3/business-diverse.png",
+    "source": "/Users/mohamedsaad/.codex/generated_images/01a080ba-220b-7a70-943d-fb9f16cf61d3/exec-e6a98f3e-9cca-4f2c-af99-a226f8bae419.png"
+  },
+  {
+    "number": 8,
+    "name": "developers-diverse",
+    "prompt": "8. developers-diverse\nGenerate exactly one distinct landscape 1536x1024 image. Use case: photorealistic-natural. Asset type: PayMint South Africa website editorial photograph. Primary request: two software engineers collaborating in contemporary modest tech studio, light-skinned White man in 30s and medium-brown South Asian woman in 30s; desk screens face away, authentic informal professional interaction, no branding; subjects centred for square crop.\nPremium believable editorial photography, subtle PayMint emerald accents, varied locations/compositions. All fictional editorial, no claim actual staff/customers/facilities. No logos, no legible text, amounts, charts or fake interface, no credit cards or POS devices. Visible diverse skin tones, ordinary authentic interactions, not posed token lineups.",
+    "path": "/Users/mohamedsaad/.codex/.chatgpt-projects/g-p-67c7fe8be13481919f254be842d43ebd/output/paymint-balanced-v3/developers-diverse.png",
+    "source": "/Users/mohamedsaad/.codex/generated_images/01a080ba-220b-7a70-943d-fb9f16cf61d3/exec-21b71022-3aed-49e3-b486-0adbe7a7ca94.png"
+  },
+  {
+    "number": 9,
+    "name": "partners-diverse",
+    "prompt": "9. partners-diverse\nGenerate exactly one distinct landscape 1536x1024 image. Use case: photorealistic-natural. Asset type: PayMint South Africa website editorial photograph. Primary request: three senior professionals in conversational meeting, dark-skinned Black woman in 50s, light-skinned White man in 50s and medium-brown woman in 40s, modern South African office, natural thoughtful discussion, no handshake cliché, subjects central crop.\nPremium believable editorial photography, subtle PayMint emerald accents, varied locations/compositions. All fictional editorial, no claim actual staff/customers/facilities. No logos, no legible text, amounts, charts or fake interface, no credit cards or POS devices. Visible diverse skin tones, ordinary authentic interactions, not posed token lineups.",
+    "path": "/Users/mohamedsaad/.codex/.chatgpt-projects/g-p-67c7fe8be13481919f254be842d43ebd/output/paymint-balanced-v3/partners-diverse.png",
+    "source": "/Users/mohamedsaad/.codex/generated_images/01a080ba-220b-7a70-943d-fb9f16cf61d3/exec-a1e75a97-2682-43b4-9f46-afd8ce9553bb.png"
+  }
+]

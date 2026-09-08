@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import './visual-theme.css';
+import { siteOrigin } from '@/lib/site';
+import { PageTransition } from '@/components/site/page-transition';
+import { MotionEffects } from '@/components/site/motion-effects';
 import { Header, Footer } from '@/components/site/chrome';
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    'https://paymint-south-africa.eng-mohammedsaad.chatgpt.site',
-  ),
+  metadataBase: new URL(siteOrigin),
   title: {
     default: 'PayMint South Africa | Financial Infrastructure',
     template: '%s | PayMint South Africa',
@@ -24,8 +26,11 @@ export default function RootLayout({
           Skip to content
         </a>
         <Header />
-        <main id="main">{children}</main>
+        <main id="main">
+          <PageTransition>{children}</PageTransition>
+        </main>
         <Footer />
+        <MotionEffects />
       </body>
     </html>
   );

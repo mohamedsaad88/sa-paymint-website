@@ -1,84 +1,140 @@
+/* oxlint-disable next/no-img-element -- Official small logo is served locally. */
 'use client';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
-import { ArrowUpRight, ChevronDown, Menu, X, ArrowRight } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, ChevronDown, Menu, X } from 'lucide-react';
 import { nav } from '@/lib/content';
 export function Logo() {
   return (
     <Link href="/" aria-label="PayMint South Africa home" className="logo">
-      pay<span>mint</span>
-      <i>®</i>
+      <img
+        src="/images/paymint-sa-logo.jpeg"
+        width="1600"
+        height="362"
+        alt="PayMint South Africa"
+      />
     </Link>
   );
 }
 export function Header() {
-  const [open, setOpen] = useState(false);
   const path = usePathname();
+  return <HeaderNavigation key={path} path={path} />;
+}
+function HeaderNavigation({ path }: { path: string }) {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [active, setActive] = useState<string | null>(null);
+  const header = useRef<HTMLElement>(null);
+  const mobileTrigger = useRef<HTMLButtonElement>(null);
+  const lastTrigger = useRef<HTMLButtonElement | null>(null);
+  function close() {
+    setMobileOpen(false);
+    setActive(null);
+  }
+  useEffect(() => {
+    function dismiss(e: PointerEvent | FocusEvent) {
+      if (e.target instanceof Node && !header.current?.contains(e.target)) {
+        setMobileOpen(false);
+        setActive(null);
+      }
+    }
+    function escape(e: KeyboardEvent) {
+      if (e.key !== 'Escape' || (!active && !mobileOpen)) return;
+      e.preventDefault();
+      if (active) {
+        setActive(null);
+        lastTrigger.current?.focus();
+      } else {
+        setMobileOpen(false);
+        mobileTrigger.current?.focus();
+      }
+    }
+    document.addEventListener('pointerdown', dismiss);
+    document.addEventListener('focusin', dismiss);
+    document.addEventListener('keydown', escape);
+    return () => {
+      document.removeEventListener('pointerdown', dismiss);
+      document.removeEventListener('focusin', dismiss);
+      document.removeEventListener('keydown', escape);
+    };
+  }, [active, mobileOpen]);
   return (
-    <header className="header">
+    <header className="header" ref={header}>
       <div className="nav-wrap">
         <div className="brand">
-          <Logo />
-          <span className="country">
-            <span className="flag">🇿🇦</span> SOUTH AFRICA
-          </span>
+          <div onClickCapture={close} role="presentation">
+            <Logo />
+          </div>
         </div>
         <button
+          ref={mobileTrigger}
+          type="button"
           className="mobile-toggle"
-          aria-label={open ? 'Close navigation' : 'Open navigation'}
-          aria-expanded={open}
+          aria-label={mobileOpen ? 'Close navigation' : 'Open navigation'}
+          aria-expanded={mobileOpen}
           aria-controls="main-navigation"
-          onClick={() => setOpen(!open)}
+          onClick={() => {
+            setMobileOpen(!mobileOpen);
+            setActive(null);
+          }}
         >
-          {open ? <X /> : <Menu />}
+          {mobileOpen ? <X /> : <Menu />}
         </button>
         <nav
           id="main-navigation"
           aria-label="Main navigation"
-          className={open ? 'navigation is-open' : 'navigation'}
+          className={mobileOpen ? 'navigation is-open' : 'navigation'}
         >
-          {nav.map((group) => (
-            <details key={group.title} className="nav-group">
-              <summary
-                onKeyDown={(e) => {
-                  if (e.key === 'Escape')
-                    e.currentTarget.closest('details')?.removeAttribute('open');
-                }}
-              >
-                {group.title}
-                <ChevronDown size={13} />
-              </summary>
-              <div className="dropdown">
-                {group.links.map(([label, href]) => (
-                  <Link
-                    key={href}
-                    href={href}
-                    aria-current={path === href ? 'page' : undefined}
-                    onClick={(e) => {
-                      setOpen(false);
-                      e.currentTarget
-                        .closest('details')
-                        ?.removeAttribute('open');
-                    }}
-                  >
-                    {label}
-                    <ArrowUpRight size={15} />
-                  </Link>
-                ))}
+          {nav.map((group) => {
+            const expanded = active === group.title;
+            const id = `nav-${group.title.toLowerCase()}`;
+            return (
+              <div className="nav-group" key={group.title}>
+                <button
+                  className="nav-trigger"
+                  type="button"
+                  aria-expanded={expanded}
+                  aria-controls={id}
+                  onClick={(e) => {
+                    lastTrigger.current = e.currentTarget;
+                    setActive(expanded ? null : group.title);
+                  }}
+                >
+                  {group.title}
+                  <ChevronDown size={15} />
+                </button>
+                {expanded && (
+                  <div id={id} className="dropdown">
+                    {group.links.map(([label, href]) => (
+                      <Link
+                        key={href}
+                        href={href}
+                        aria-current={
+                          !href.includes('#') && path === href
+                            ? 'page'
+                            : undefined
+                        }
+                        onClick={close}
+                      >
+                        {label}
+                        <ArrowUpRight size={16} />
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
-            </details>
-          ))}
-          <Link href="/contact" onClick={() => setOpen(false)}>
-            Contact
-          </Link>
+            );
+          })}
           <Link
             href="/contact"
-            className="button small"
-            onClick={() => setOpen(false)}
+            aria-current={path === '/contact' ? 'page' : undefined}
+            onClick={close}
           >
-            Get Started
-            <ArrowUpRight size={16} />
+            Contact
+          </Link>
+          <Link href="/contact" className="button small" onClick={close}>
+            Get in Touch
+            <ArrowUpRight size={17} />
           </Link>
         </nav>
       </div>
@@ -92,15 +148,14 @@ export function Footer() {
         <div className="footer-brand">
           <Logo />
           <p>
-            Financial infrastructure for
+            Financial services for South African
             <br />
-            businesses and their people.
+            businesses, SMEs and employees.
           </p>
-          <span className="country">🇿🇦 SOUTH AFRICA</span>
         </div>
         {nav.map((group) => (
           <div key={group.title}>
-            <h3>{group.title}</h3>
+            <h2>{group.title}</h2>
             {group.links.map(([label, href]) => (
               <Link href={href} key={label}>
                 {label}
@@ -110,27 +165,27 @@ export function Footer() {
         ))}
       </div>
       <div className="container footer-note">
-        South African product availability, eligibility and terms are confirmed
-        with PayMint and relevant providers. Product screens are illustrative.
+        Contact PayMint for service details and applicable terms.
       </div>
       <div className="container footer-bottom">
         <span>© {new Date().getFullYear()} PayMint. All rights reserved.</span>
         <div>
           <Link href="/privacy">Privacy</Link>
-          <Link href="/contact">Contact</Link>
+          <Link href="/insights">Insights</Link>
+          <Link href="/careers">Careers</Link>
           <a href="https://paymint-eg.com/" target="_blank" rel="noreferrer">
-            PayMint Egypt <ArrowUpRight size={13} />
+            PayMint Egypt
+            <ArrowUpRight size={14} />
           </a>
         </div>
-        <span>Built for the next chapter.</span>
       </div>
     </footer>
   );
 }
 export function CTA({
-  title = 'Let’s move South Africa forward.',
-  description = 'Connect your business. Empower your people. Build what comes next.',
-  label = 'Get Started',
+  title = 'Let’s talk about your needs.',
+  description = 'Speak with PayMint South Africa about business payments, finance and financial wellness.',
+  label = 'Contact PayMint',
   interest = 'Corporate enquiry',
 }: {
   title?: string;
@@ -142,7 +197,7 @@ export function CTA({
     <section className="cta-section">
       <div className="container cta-inner">
         <div>
-          <span className="eyebrow">THE NEXT MOVE IS YOURS</span>
+          <span className="eyebrow">GET IN TOUCH</span>
           <h2>{title}</h2>
           <p>{description}</p>
         </div>

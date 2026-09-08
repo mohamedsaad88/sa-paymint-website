@@ -1,336 +1,197 @@
-/* oxlint-disable next/no-img-element -- Locally optimized WebP with explicit dimensions; no runtime image service required. */
 import Link from 'next/link';
 import {
   ArrowUpRight,
-  Wallet,
+  ArrowDown,
   Users,
   Layers3,
   HeartHandshake,
-  ShieldCheck,
-  Code2,
-  Globe2,
-  Check,
 } from 'lucide-react';
 import { CTA, TextLink } from '@/components/site/chrome';
-import { Dashboard, Phone, Network } from '@/components/site/visuals';
+import { HeroIntro } from '@/components/site/hero-intro';
+import { Visual } from '@/components/site/visuals';
 export const metadata = { alternates: { canonical: '/' } };
 const products = [
   {
     n: '01',
     icon: ArrowUpRight,
-    title: 'Business payouts',
-    text: 'Move money to the people who move your business.',
+    title: 'Payroll & supplier payouts',
+    text: 'Payment infrastructure for South African SMEs and employers.',
     href: '/payouts',
-    tags: 'SUPPLIERS · CONTRACTORS · BULK PAYOUTS',
+    tag: 'PAYOUTS INFRASTRUCTURE',
   },
   {
     n: '02',
-    icon: Users,
-    title: 'Payroll, connected',
-    text: 'Bring your payroll and payment workflows together.',
-    href: '/payroll',
-    tags: 'EMPLOYERS · PAYROLL TEAMS · PEOPLE',
+    icon: Layers3,
+    title: 'Embedded finance',
+    text: 'SME loans and salary advances within business workflows.',
+    href: '/embedded-finance',
+    tag: 'FOR BUSINESSES & EMPLOYEES',
   },
   {
     n: '03',
-    icon: Layers3,
-    title: 'Embedded finance',
-    text: 'Open new possibilities through financial partnerships.',
-    href: '/embedded-finance',
-    tags: 'SME FINANCE · PARTNER-POWERED SERVICES',
+    icon: Users,
+    title: 'Early Wage Access',
+    text: 'A focus on access to earned wages and salary advances.',
+    href: '/employees',
+    tag: 'FOR EMPLOYEES',
   },
   {
     n: '04',
     icon: HeartHandshake,
     title: 'Financial wellness',
-    text: 'Put your people’s financial wellbeing in the picture.',
+    text: 'Tools focused on managing income, spending and goals.',
     href: '/financial-wellness',
-    tags: 'EARLY WAGE ACCESS · EMPLOYEE BENEFITS',
+    tag: 'EVERYDAY FINANCIAL WELLBEING',
   },
 ];
 export default function Home() {
   return (
     <>
-      <section className="hero home-hero">
+      <section className="hero home-hero future-hero">
         <div className="container hero-grid">
           <div className="hero-copy">
             <div className="pill">
-              <span className="dot" /> A NEW CHAPTER. A SHARED AMBITION.
+              <span className="dot" /> PAYMINT SOUTH AFRICA
             </div>
             <h1>
               Financial
               <br />
-              Infrastructure
+              Infrastructure.
               <br />
               <span>
                 Built for
-                <br className="desktop-br" /> South Africa.
+                <br />
+                South Africa.
               </span>
             </h1>
             <p>
-              One platform connecting businesses, employers, employees and
-              financial partners.
-              <br />
-              Built to move money. Designed to move people forward.
+              Payouts, embedded finance and financial wellness for businesses,
+              SMEs and employees.
             </p>
             <div className="hero-actions">
               <Link className="button" href="/contact">
-                Let’s Build Together
-                <ArrowUpRight size={18} />
+                Talk to PayMint
+                <ArrowUpRight size={20} />
               </Link>
-              <TextLink href="/platform">Explore the platform</TextLink>
-            </div>
-            <div className="hero-proof">
-              <ShieldCheck size={17} />
-              <span>PayMint technology. South African ambition.</span>
+              <TextLink href="#services">Explore our services</TextLink>
             </div>
           </div>
-          <Dashboard />
+          <HeroIntro />
         </div>
         <div className="container hero-bottom">
-          <span>FOR THE BUSINESSES BUILDING WHAT’S NEXT</span>
-          <div>
-            <span>SMEs & enterprises</span>
-            <span>Employers & teams</span>
-            <span>Financial partners</span>
-            <span>Platforms & fintechs</span>
-          </div>
+          <span>FINANCIAL INCLUSION. SHARED OPPORTUNITY.</span>
+          <a href="#services" className="scroll-cue">
+            Discover PayMint
+            <ArrowDown size={16} />
+          </a>
         </div>
       </section>
-      <section className="section container">
-        <div className="section-intro">
-          <div>
-            <span className="eyebrow">MONEY MOVES. POSSIBILITIES OPEN.</span>
-            <h2>
-              The right connections.
-              <br />A bigger future.
-            </h2>
-          </div>
+      <section id="services" className="container section service-index">
+        <div className="service-index-intro">
+          <span className="eyebrow">WHAT WE DO IN SOUTH AFRICA</span>
+          <h2>
+            Business needs.
+            <br />
+            <span>People’s wellbeing.</span>
+          </h2>
           <p>
-            From paying your team to building financial services into your
-            business, it starts with infrastructure that brings people together.
+            Financial services that reflect PayMint South Africa’s focus on
+            business growth and financial inclusion.
           </p>
+          <div className="service-index-mark" aria-hidden="true">
+            ↗
+          </div>
         </div>
-        <div className="product-grid">
-          {products.map(({ n, icon: Icon, title, text, href, tags }) => (
-            <Link className="product-card" href={href} key={n}>
-              <div className="product-card-top">
-                <Icon size={28} />
-                <span>{n}</span>
+        <div className="service-index-list">
+          {products.map(({ n, icon: Icon, title, text, href, tag }) => (
+            <Link className="service-editorial-row" href={href} key={n}>
+              <span className="row-number">{n}</span>
+              <div>
+                <span className="eyebrow">{tag}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
               </div>
-              <h3>{title}</h3>
-              <p>{text}</p>
-              <div className="product-card-bottom">
-                <span>{tags}</span>
-                <ArrowUpRight size={24} />
-              </div>
+              <span className="row-icon">
+                <Icon size={22} />
+              </span>
             </Link>
           ))}
         </div>
       </section>
-      <section className="mint-section">
-        <div className="container split section">
-          <div className="people-image">
-            <img
-              src="/images/business-owner.webp"
-              alt="Illustrative scene of a business owner working in a contemporary studio"
-              loading="lazy"
-              width="1536"
-              height="1024"
-            />
-            <div className="image-caption">
-              <span>BUSINESS IS PERSONAL.</span>
-              <strong>
-                Build a business.
-                <br />
-                Open possibilities.
-              </strong>
-            </div>
-          </div>
+      <section className="people-story">
+        <div className="container section split">
+          <Visual name="home-business" />
           <div className="editorial-copy">
-            <span className="eyebrow">FOR BUSINESSES. FOR THEIR PEOPLE.</span>
+            <span className="eyebrow">FOR SMEs & EMPLOYERS</span>
             <h2>
-              When business moves,
+              Supporting businesses.
               <br />
-              <span>people move forward.</span>
+              <span>Opening opportunity.</span>
             </h2>
             <p>
-              Behind every payment is someone building a livelihood. A supplier
-              growing their business. A contractor finishing a project. An
-              employee planning what comes next.
+              Payroll and supplier payments are part of everyday business.
+              PayMint South Africa brings a focus on these needs alongside
+              embedded finance.
             </p>
             <p>
-              PayMint connects the financial side of running a business with the
-              everyday needs of the people who make it possible.
+              Our mission focuses on underserved communities, SMEs and
+              black-owned enterprises.
             </p>
-            <ul className="check-list">
-              <li>
-                <Check />
-                Bring payouts and payroll into one workflow
-              </li>
-              <li>
-                <Check />
-                Explore meaningful employee financial benefits
-              </li>
-              <li>
-                <Check />
-                Build on the systems you already use
-              </li>
-            </ul>
-            <TextLink href="/business">Discover PayMint for Business</TextLink>
+            <TextLink href="/business">PayMint for Business</TextLink>
           </div>
         </div>
       </section>
-      <section className="section container platform-home">
-        <div className="editorial-copy">
-          <span className="eyebrow">
-            ONE PLATFORM. CONNECTED POSSIBILITIES.
-          </span>
+      <section className="vision-ribbon">
+        <div className="container">
+          <span className="eyebrow">OUR VISION</span>
           <h2>
-            The infrastructure
+            Opportunity.
             <br />
-            behind your next move.
+            <span>Liquidity.</span> Growth.
           </h2>
-          <p>
-            A business dashboard. A mobile foundation. APIs that connect your
-            systems. A platform designed to bring financial partners closer to
-            the businesses and people they serve.
-          </p>
-          <div className="platform-links">
-            <Link href="/platform#business">
-              <Layers3 />
-              PayMint Business
-              <ArrowUpRight />
-            </Link>
-            <Link href="/platform#mobile">
-              <Wallet />
-              PayMint Mobile
-              <ArrowUpRight />
-            </Link>
-            <Link href="/developers">
-              <Code2 />
-              APIs & integrations
-              <ArrowUpRight />
-            </Link>
+          <div className="vision-ribbon-bottom">
+            <p>
+              A future where more businesses and individuals can participate in
+              South Africa’s financial life.
+            </p>
+            <TextLink href="/about">Our vision and mission</TextLink>
           </div>
-          <TextLink href="/platform">Meet the platform</TextLink>
         </div>
-        <Network />
       </section>
-      <section className="dark-section">
-        <div className="container section">
-          <span className="eyebrow">WHY PAYMINT</span>
-          <div className="section-intro">
+      <section className="employee-story">
+        <div className="container section split">
+          <div className="editorial-copy">
+            <span className="eyebrow">FOR EMPLOYEES</span>
             <h2>
-              A local ambition.
+              Financial wellbeing.
               <br />
-              An experienced foundation.
+              <span>Beyond payday.</span>
             </h2>
             <p>
-              Technology is only the beginning.
-              <br />
-              What matters is what it makes possible.
+              PayMint South Africa’s employee offering focuses on early wage
+              access and tools for managing income, spending and financial
+              goals.
             </p>
+            <TextLink href="/employees">PayMint for Employees</TextLink>
           </div>
-          <div className="reason-row">
-            {[
-              [
-                ShieldCheck,
-                'Trust at the foundation',
-                'Security and operational control belong in the design, from the first conversation.',
-              ],
-              [
-                Globe2,
-                'Built with African ambition',
-                'Drawing on PayMint’s experience in Egypt to build the next chapter in South Africa.',
-              ],
-              [
-                HeartHandshake,
-                'Inclusion with purpose',
-                'A focus on SMEs, underserved businesses and access to useful financial services.',
-              ],
-            ].map(([I, t, d]) => {
-              const Icon = I as typeof ShieldCheck;
-              return (
-                <div key={t as string}>
-                  <Icon />
-                  <h3>{t as string}</h3>
-                  <p>{d as string}</p>
-                </div>
-              );
-            })}
-          </div>
-          <TextLink href="/security">Explore security & trust</TextLink>
-        </div>
-      </section>
-      <section className="container section split employee-home">
-        <Phone />
-        <div className="editorial-copy">
-          <span className="eyebrow">FOR THE PEOPLE BEHIND EVERY BUSINESS</span>
-          <h2>
-            More confidence.
-            <br />
-            Beyond payday.
-          </h2>
-          <p>
-            Getting paid is a starting point. Our vision is a more connected
-            financial experience that helps employees understand their money and
-            explore access to eligible earnings.
-          </p>
-          <TextLink href="/employees">Explore the employee experience</TextLink>
-          <div className="roadmap-note">
-            <span className="dot" />
-            <p>
-              Designed to grow with you. Cards, savings, bill payments and
-              benefits are future opportunities for South Africa.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section className="story-band">
-        <div className="container story-content">
-          <div className="story-years">
-            <span>EGYPT → SOUTH AFRICA</span>
-            <strong>
-              One African
-              <br />
-              ambition.
-            </strong>
-          </div>
-          <div>
-            <span className="eyebrow">
-              EXPERIENCE THAT TRAVELS. THINKING THAT’S LOCAL.
-            </span>
-            <h2>
-              From our roots in Egypt.
-              <br />
-              To what’s next in Africa.
-            </h2>
-            <p>
-              PayMint has been building financial technology since 2019. South
-              Africa marks the next chapter: applying that experience to local
-              business needs, local partnerships and a shared vision of
-              financial inclusion.
-            </p>
-            <TextLink href="/about">Our story, still unfolding</TextLink>
-          </div>
+          <Visual name="home-wellness" />
         </div>
       </section>
       <section className="container section partner-home">
         <div>
-          <span className="eyebrow">LET’S BUILD WHAT COMES NEXT</span>
+          <span className="eyebrow">PARTNERSHIP ENQUIRIES</span>
           <h2>
-            A stronger ecosystem.
+            A shared ambition.
             <br />
-            Starts with a conversation.
+            Start a conversation.
           </h2>
         </div>
         <div>
           <p>
-            Banks. Employers. Payroll platforms. Fintechs. Bring your expertise
-            to a shared opportunity.
+            Introduce your organisation and the opportunity you would like to
+            explore with PayMint South Africa.
           </p>
-          <TextLink href="/partners">Become a Partner</TextLink>
+          <TextLink href="/partners">Talk about a partnership</TextLink>
         </div>
       </section>
       <CTA />

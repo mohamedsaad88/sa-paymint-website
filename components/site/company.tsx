@@ -1,153 +1,105 @@
-/* oxlint-disable next/no-img-element -- Locally optimized WebP with explicit dimensions; no runtime image service required. */
+/* oxlint-disable next/no-img-element -- Official reference portraits optimized locally. */
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
-import { CTA, TextLink } from './chrome';
+import { CTA } from './chrome';
 export function About() {
   return (
     <>
       <section className="simple-hero">
         <div className="container">
-          <span className="eyebrow">OUR STORY. OUR NEXT CHAPTER.</span>
+          <span className="eyebrow">ABOUT PAYMINT SOUTH AFRICA</span>
           <h1>
-            Rooted in experience.
+            Financial inclusion.
             <br />
-            <span>Growing with Africa.</span>
+            <span>Shared opportunity.</span>
           </h1>
           <p>
-            Financial technology should open doors. PayMint South Africa brings
-            that belief to a new market, with local leadership and a shared
-            ambition for meaningful financial inclusion.
+            PayMint South Africa focuses on financial services for businesses,
+            SMEs and employees, with a mission centred on inclusion and growth.
           </p>
         </div>
       </section>
-      <section className="container section split">
-        <div className="editorial-copy">
-          <span className="eyebrow">FROM EGYPT TO SOUTH AFRICA</span>
-          <h2>
-            Experience travels.
-            <br />
-            Opportunity is local.
-          </h2>
-          <p>
-            PayMint began in Egypt in 2019, building technology for business
-            payments and financial services. Its experience spans payouts,
-            payroll, embedded finance and mobile financial experiences.
-          </p>
-          <p>
-            South Africa is the next chapter in that African journey. Our focus
-            is on connecting employers, SMEs, employees and financial partners
-            in ways that reflect South African needs.
-          </p>
-          <p>
-            That means listening to the businesses building livelihoods,
-            including black-owned enterprises and underserved communities, and
-            creating space for practical financial solutions.
-          </p>
-        </div>
-        <div className="people-image">
-          <img
-            src="/images/business-owner.webp"
-            width="1536"
-            height="1024"
-            alt="Illustrative South African business studio scene"
-            loading="lazy"
-          />
-          <div className="image-caption">
-            <span>LOCAL NEEDS. SHARED POSSIBILITIES.</span>
-            <strong>
-              A future more
-              <br />
-              people can be part of.
-            </strong>
-          </div>
-        </div>
-      </section>
-      <section className="mint-section">
-        <div className="container section values">
+      <section className="container section">
+        <div className="values">
           <div>
             <span className="eyebrow">OUR VISION</span>
-            <h3>Opportunity within reach.</h3>
+            <h2>Opportunity within reach.</h2>
             <p>
-              A South African economy where businesses and individuals can
-              access the financial tools they need to participate, grow and move
-              forward.
+              A future where South African businesses and individuals have
+              access to opportunity, liquidity and growth.
             </p>
           </div>
           <div>
             <span className="eyebrow">OUR MISSION</span>
-            <h3>Make the connection matter.</h3>
+            <h2>Make financial access matter.</h2>
             <p>
-              Simplify business payments, connect relevant financial services
-              and support employee financial wellness through technology, local
-              understanding and responsible partnerships.
+              Supporting underserved communities, SMEs and black-owned
+              enterprises through payment infrastructure, access to finance and
+              employee financial wellness.
             </p>
           </div>
         </div>
       </section>
+      <section className="mint-section">
+        <div className="container section">
+          <span className="eyebrow">OUR SOUTH AFRICAN FOCUS</span>
+          <div className="feature-list">
+            {[
+              [
+                'Businesses & SMEs',
+                'Payroll and supplier payments, alongside embedded finance for SME loans and salary advances.',
+              ],
+              [
+                'Employees',
+                'Early wage access and financial wellness tools focused on income, spending and goals.',
+              ],
+            ].map(([title, desc]) => (
+              <div className="editorial-copy" key={title}>
+                <h2>{title}</h2>
+                <p>{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       <section id="leadership" className="container section">
-        <span className="eyebrow">SOUTH AFRICAN LEADERSHIP</span>
-        <h2>
-          Local perspective.
-          <br />
-          Connected experience.
-        </h2>
+        <span className="eyebrow">OUR BOARD IN SOUTH AFRICA</span>
+        <h2>Leadership and experience.</h2>
         <div className="leadership">
           {[
             [
-              'MR',
+              'rabie',
               'Mohamed Rabie',
               'Co-Founder & Managing Director',
               'Experience in scaling fintech solutions across emerging markets.',
             ],
             [
-              'ZM',
+              'morrison',
               'Zanele Morrison',
               'CEO & Strategic Partnerships',
-              'South African strategic perspective and partnership leadership.',
+              'Media and strategy expertise in the South African landscape.',
             ],
             [
-              'MY',
+              'yehia',
               'Mohamed Yehia',
               'Co-founder & Chief Information Officer',
-              'Technology leadership focused on scalable financial infrastructure.',
+              'Experience in scalable technology infrastructure.',
             ],
-          ].map(([initial, name, role, bio]) => (
+          ].map(([id, name, role, bio]) => (
             <article className="leader" key={name}>
-              <div className="leader-initial" aria-hidden="true">
-                {initial}
-              </div>
+              <img
+                className="leader-portrait"
+                src={`/images/${id}.webp`}
+                alt={name}
+                width="435"
+                height="600"
+                loading="lazy"
+              />
               <h3>{name}</h3>
               <p className="role">{role}</p>
               <p>{bio}</p>
             </article>
           ))}
-        </div>
-        <p className="source-note">
-          Leadership and titles as published on{' '}
-          <a
-            href="https://paymint-eg.com/south-africa/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            PayMint’s South Africa page
-          </a>
-          .
-        </p>
-      </section>
-      <section className="dark-section">
-        <div className="container section editorial-copy">
-          <span className="eyebrow">OUR AFRICAN VISION</span>
-          <h2>
-            Build locally.
-            <br />
-            Think beyond borders.
-          </h2>
-          <p>
-            Every market has its own people, institutions and needs. Our African
-            ambition is to connect that local understanding with PayMint’s
-            technology experience, one considered step at a time.
-          </p>
-          <TextLink href="/partners">Help shape the next chapter</TextLink>
         </div>
       </section>
       <CTA />
@@ -159,67 +111,22 @@ export function Careers() {
     <>
       <section className="simple-hero">
         <div className="container">
-          <span className="eyebrow">CAREERS AT PAYMINT</span>
+          <span className="eyebrow">CAREERS</span>
           <h1>
-            Build something
+            Career enquiries.
             <br />
-            <span>that moves people.</span>
+            <span>Talk to PayMint.</span>
           </h1>
-          <p>
-            Help shape financial infrastructure that connects businesses to
-            opportunity and people to a more confident financial future.
-          </p>
         </div>
       </section>
       <section className="container section">
-        <div className="section-intro">
-          <h2>
-            Bring your perspective.
-            <br />
-            Make it count.
-          </h2>
-          <p>
-            We value thoughtful problem-solving, collaboration and a close
-            understanding of the people our technology serves.
-          </p>
-        </div>
-        <div className="values">
-          <div>
-            <span className="eyebrow">WORK THAT MATTERS</span>
-            <h3>
-              Useful technology.
-              <br />
-              Real-world purpose.
-            </h3>
-            <p>
-              Our work brings together product, engineering, operations, finance
-              and partnerships around a common goal: making financial services
-              more accessible.
-            </p>
-          </div>
-          <div>
-            <span className="eyebrow">A SHARED AMBITION</span>
-            <h3>
-              Different expertise.
-              <br />
-              Connected thinking.
-            </h3>
-            <p>
-              We’re interested in people who ask good questions, take ownership
-              and turn complex challenges into practical solutions.
-            </p>
-          </div>
-        </div>
         <div className="career-banner">
           <div>
-            <h3>Future opportunities</h3>
-            <p>
-              No open roles are published here at present. You can introduce
-              yourself to the PayMint team.
-            </p>
+            <h2>No vacancies listed here.</h2>
+            <p>For career enquiries, you can contact the PayMint team.</p>
           </div>
           <Link href="/contact?interest=Careers" className="button">
-            Introduce Yourself
+            Contact PayMint
             <ArrowUpRight size={18} />
           </Link>
         </div>
@@ -238,48 +145,43 @@ export function Privacy() {
             <br />
             <span>Your information.</span>
           </h1>
-          <p>
-            How the enquiry experience on this website handles the information
-            you choose to share.
-          </p>
+          <p>How this website prepares an email enquiry.</p>
         </div>
       </section>
       <section className="container section privacy-content">
-        <h2>What you provide</h2>
+        <h2>Preparing your enquiry</h2>
         <p>
-          The contact form asks for your name, email address, company, optional
-          phone number, area of interest and message. Please do not include bank
-          details, identity documents, passwords or other sensitive information.
+          The contact form prepares an email using the name, email address,
+          optional company and phone number, interest and message you enter. The
+          form processes these details in your browser. It does not submit them
+          to a website server or save them in browser storage.
         </p>
-        <h2>How enquiries are delivered</h2>
+        <h2>Sending your email</h2>
         <p>
-          When a secure enquiry destination is configured, your details are sent
-          to PayMint’s designated intake service to respond to your request. If
-          direct delivery is unavailable, the form offers an email draft
-          addressed to PayMint’s published email address. Opening a draft does
-          not send an email; you review and send it in your email application.
+          The email is addressed to info@paymint-eg.com, PayMint’s published
+          group contact. You review and send it in your email application.
+          Preparing or opening a draft does not send it. Your email provider
+          processes the message under its own terms.
         </p>
-        <h2>Website storage</h2>
+        <h2>Information to share</h2>
         <p>
-          The form does not save enquiry details in your browser’s local
-          storage. This website does not include advertising trackers or
-          analytics scripts. Hosting services may process technical connection
-          information needed to provide and protect the website. Your email
-          provider handles any email you choose to send under its own terms.
+          Please keep the enquiry to your contact details and business or
+          service question. Do not include identity documents, bank account
+          information, passwords or sensitive personal information.
         </p>
-        <h2>Questions about personal information</h2>
+        <h2>Website operation</h2>
+        <p>
+          This website does not include advertising trackers or analytics
+          scripts. Hosting services may process technical connection information
+          needed to deliver and protect the website.
+        </p>
+        <h2>Questions for PayMint</h2>
         <p>
           Contact <a href="mailto:info@paymint-eg.com">info@paymint-eg.com</a>{' '}
-          to ask how your enquiry will be handled, request the applicable
-          privacy information or discuss a correction or deletion request. The
-          appropriate entity, processing arrangements and retention details
-          should be confirmed with PayMint before onboarding to a financial
-          service.
-        </p>
-        <p>
-          This page describes this website’s enquiry workflow. It does not
-          represent a POPIA certification or replace the terms and privacy
-          information for an individual financial product.
+          for questions about how PayMint handles an email enquiry or to request
+          the privacy information applicable to a financial service. This page
+          describes this website’s email-preparation workflow, not a financial
+          product’s terms.
         </p>
       </section>
     </>

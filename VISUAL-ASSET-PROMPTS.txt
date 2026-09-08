@@ -1,0 +1,23 @@
+Asset 1
+Use case: stylized-concept
+Asset type: standalone editorial website image, not a website mockup.
+Primary request: premium futuristic fintech abstract sculpture, intersecting smooth emerald optical-glass ribbons and brushed dark chrome, luminous lime edges, dark near-black forest background, elegant flowing connections.
+Style/medium: sophisticated studio editorial 3D render.
+Composition/framing: landscape 3:2, sculpture centered/right.
+Constraints: no coins, cards, logos, UI, text or watermarks. Generate a clean image only.
+
+Asset 2
+Use case: photorealistic-natural
+Asset type: standalone illustrative editorial website photograph, not a website mockup.
+Primary request: fictional Black South African female SME owner around 35 with a colleague in a contemporary Johannesburg creative business studio, candid confident working moment.
+Composition/framing: landscape 3:2; laptop present with screen hidden.
+Lighting/mood: natural daylight, modern documentary/editorial photography, subtle green accents, realistic textures.
+Constraints: no logos, text, money, cards, UI or watermarks. Fictional people, not actual PayMint customers. Generate a clean image only.
+
+Asset 3
+Use case: photorealistic-natural
+Asset type: standalone illustrative editorial website photograph, not a website mockup.
+Primary request: fictional Black South African male professional around 30 with a smartphone at an airy contemporary cafe/outdoor urban terrace, calm candid expression.
+Composition/framing: landscape 3:2; device screen not visible.
+Lighting/mood: warm natural light, modern relatable everyday financial wellbeing mood, realistic documentary/editorial photography.
+Constraints: no logos, text, cards, app UI or watermarks. Fictional person, not an actual customer. Generate a clean image only.

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { interests } from '@/lib/content';
 import { ContactForm } from '@/components/site/contact-form';
 export const metadata: Metadata = {
   title: 'Contact',
@@ -12,6 +13,10 @@ export default async function Contact({
   searchParams: Promise<{ interest?: string }>;
 }) {
   const params = await searchParams;
+  const interest =
+    typeof params.interest === 'string' && interests.includes(params.interest)
+      ? params.interest
+      : 'Corporate enquiry';
   return (
     <div className="container contact-layout">
       <div className="contact-copy">
@@ -46,13 +51,12 @@ export default async function Contact({
         </div>
         <div className="contact-detail">
           <p>
-            For employees: ask your employer whether a PayMint programme is
-            available to you. Please avoid sharing payroll or account
-            information here.
+            Please keep your enquiry to the information needed to respond. Avoid
+            sharing payroll or account details here.
           </p>
         </div>
       </div>
-      <ContactForm initialInterest={params.interest || 'Corporate enquiry'} />
+      <ContactForm key={interest} initialInterest={interest} />
     </div>
   );
 }

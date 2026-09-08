@@ -1,17 +1,29 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowUpRight, ArrowRight } from 'lucide-react';
-import { pages } from '@/lib/content';
-import { CTA, TextLink } from '@/components/site/chrome';
-import { Visual, Dashboard, Phone } from '@/components/site/visuals';
+import { ArrowUpRight } from 'lucide-react';
+import { pages, getPage } from '@/lib/content';
+import { CTA } from '@/components/site/chrome';
+import { Visual } from '@/components/site/visuals';
 import { About, Careers, Privacy } from '@/components/site/company';
 import { Insights } from '@/components/site/insights';
-const extra: Record<string, string> = {
-  about: 'About & Leadership',
-  careers: 'Careers',
-  privacy: 'Website Privacy',
-  insights: 'Insights & News',
+const extra: Record<string, { title: string; description: string }> = {
+  about: {
+    title: 'About & Leadership',
+    description: 'PayMint South Africa’s vision, mission and leadership.',
+  },
+  careers: {
+    title: 'Careers',
+    description: 'Contact PayMint about career enquiries.',
+  },
+  privacy: {
+    title: 'Website Privacy',
+    description: 'How this website prepares your email enquiry.',
+  },
+  insights: {
+    title: 'Insights & News',
+    description: 'PayMint South Africa news and insights.',
+  },
 };
 export function generateStaticParams() {
   return [...Object.keys(pages), ...Object.keys(extra)].map((slug) => ({
@@ -24,12 +36,13 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const page = pages[slug];
+  const p = getPage(slug);
+  const e = Object.hasOwn(extra, slug) ? extra[slug] : undefined;
+  if (!p && !e)
+    return { title: 'Page not found', robots: { index: false, follow: false } };
   return {
-    title: page
-      ? page.eyebrow.replace('PAYMINT ', '')
-      : extra[slug] || 'Page not found',
-    description: page?.description,
+    title: p?.eyebrow || e?.title,
+    description: p?.description || e?.description,
     alternates: { canonical: `/${slug}` },
   };
 }
@@ -43,11 +56,11 @@ export default async function ProductPage({
   if (slug === 'careers') return <Careers />;
   if (slug === 'privacy') return <Privacy />;
   if (slug === 'insights') return <Insights />;
-  const p = pages[slug];
+  const p = getPage(slug);
   if (!p) notFound();
   return (
     <>
-      <section className="hero page-hero">
+      <section className={`hero page-hero visual-page visual-${p.visual}`}>
         <div className="container hero-grid">
           <div className="hero-copy">
             <span className="eyebrow">{p.eyebrow}</span>
@@ -66,10 +79,9 @@ export default async function ProductPage({
               </Link>
             </div>
           </div>
-          <Visual type={p.visual} />
+          <Visual name={slug} priority />
         </div>
       </section>
-      {p.steps && slug === 'payouts' && <Steps steps={p.steps} />}
       <section className="container section">
         <div className="section-intro">
           <div>
@@ -91,105 +103,17 @@ export default async function ProductPage({
             </article>
           ))}
         </div>
-        {p.note && (
-          <div className="scope-note">
-            <strong>
-              {slug === 'security'
-                ? 'EVIDENCE & SCOPE'
-                : 'SOUTH AFRICAN AVAILABILITY'}
-            </strong>
-            {p.note}
-          </div>
-        )}
-        {slug === 'security' && (
+        {p.source && (
           <p className="source-note">
-            Published reference:{' '}
-            <a href="https://paymint-eg.com/" target="_blank" rel="noreferrer">
-              PayMint Egypt security FAQ
+            Group reference:{' '}
+            <a href={p.source.url} target="_blank" rel="noreferrer">
+              {p.source.label}
             </a>
-            . Current certification scope and assurance documents are available
-            to request from the team.
+            . Contact PayMint for South African service details.
           </p>
         )}
       </section>
-      {p.steps && slug !== 'payouts' && <Steps steps={p.steps} />}{' '}
-      {slug === 'platform' && (
-        <>
-          <section id="business" className="mint-section platform-detail">
-            <div className="container section split">
-              <div className="editorial-copy">
-                <span className="eyebrow">PAYMINT BUSINESS</span>
-                <h2>
-                  A clearer view.
-                  <br />A more connected operation.
-                </h2>
-                <p>
-                  Bring payment preparation, operational reporting and
-                  transaction visibility into a shared business workspace.
-                  Define the controls and responsibilities that suit your
-                  organisation.
-                </p>
-                <TextLink href="/contact?interest=Business%20payouts">
-                  Book a Business Demo
-                </TextLink>
-              </div>
-              <Dashboard />
-            </div>
-          </section>
-          <section
-            id="mobile"
-            className="container section split platform-detail"
-          >
-            <Phone />
-            <div className="editorial-copy">
-              <span className="eyebrow">PAYMINT MOBILE</span>
-              <h2>
-                The everyday side
-                <br />
-                of financial infrastructure.
-              </h2>
-              <p>
-                PayMint’s existing mobile capabilities provide a foundation for
-                a South African employee experience. Local app access and
-                product availability will be confirmed as programmes are
-                introduced.
-              </p>
-              <TextLink href="/employees">
-                Meet the employee experience
-              </TextLink>
-            </div>
-          </section>
-        </>
-      )}
       <CTA label={p.cta} interest={p.interest} />
     </>
-  );
-}
-function Steps({ steps }: { steps: [string, string][] }) {
-  return (
-    <section className="steps-section">
-      <div className="container">
-        <span className="eyebrow">A CLEAR PATH FORWARD</span>
-        <h2>
-          {steps.length === 5
-            ? 'From funding to the finish line.'
-            : 'From the first conversation to connection.'}
-        </h2>
-        <div className="steps">
-          {steps.map(([title, desc], i) => (
-            <div className="step" key={title}>
-              <div className="step-count">
-                <span>0{i + 1}</span>
-                {i < steps.length - 1 && <ArrowRight size={18} />}
-              </div>
-              <div>
-                <h3>{title}</h3>
-                <p>{desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
   );
 }

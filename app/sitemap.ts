@@ -1,3 +1,4 @@
+import { siteOrigin } from '@/lib/site';
 import { pages } from '@/lib/content';
 export default function sitemap() {
   return [
@@ -9,7 +10,7 @@ export default function sitemap() {
     'contact',
     'privacy',
   ].map((slug) => ({
-    url: `https://paymint-south-africa.eng-mohammedsaad.chatgpt.site/${slug}`,
+    url: `${siteOrigin}/${slug}`,
     changeFrequency: 'monthly' as const,
     priority: slug ? 0.7 : 1,
   }));
