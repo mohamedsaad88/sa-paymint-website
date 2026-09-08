@@ -1,6 +1,7 @@
 'use client';
 import { useState, useSyncExternalStore, type SyntheticEvent } from 'react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { ArrowUpRight, Mail, Copy } from 'lucide-react';
 import {
   Select,
@@ -218,4 +219,12 @@ export function ContactForm({ initialInterest }: { initialInterest: string }) {
       </noscript>
     </form>
   );
+}
+
+export function QueryContactForm() {
+  const params = useSearchParams();
+  const value = params.get('interest');
+  const interest =
+    value && interests.includes(value) ? value : 'Corporate enquiry';
+  return <ContactForm key={interest} initialInterest={interest} />;
 }

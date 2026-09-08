@@ -1,22 +1,13 @@
 import type { Metadata } from 'next';
-import { interests } from '@/lib/content';
-import { ContactForm } from '@/components/site/contact-form';
+import { Suspense } from 'react';
+import { ContactForm, QueryContactForm } from '@/components/site/contact-form';
 export const metadata: Metadata = {
   title: 'Contact',
   description:
     'Talk to PayMint about South African business payouts, payroll, employee financial wellness, integrations and partnerships.',
   alternates: { canonical: '/contact' },
 };
-export default async function Contact({
-  searchParams,
-}: {
-  searchParams: Promise<{ interest?: string }>;
-}) {
-  const params = await searchParams;
-  const interest =
-    typeof params.interest === 'string' && interests.includes(params.interest)
-      ? params.interest
-      : 'Corporate enquiry';
+export default function Contact() {
   return (
     <div className="container contact-layout">
       <div className="contact-copy">
@@ -56,7 +47,9 @@ export default async function Contact({
           </p>
         </div>
       </div>
-      <ContactForm key={interest} initialInterest={interest} />
+      <Suspense fallback={<ContactForm initialInterest="Corporate enquiry" />}>
+        <QueryContactForm />
+      </Suspense>
     </div>
   );
 }

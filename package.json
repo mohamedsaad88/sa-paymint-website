@@ -11,7 +11,8 @@
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint",
     "format": "oxfmt",
-    "test": "node --test scripts/core.test.mjs"
+    "test": "node --test scripts/core.test.mjs",
+    "build:netlify": "node scripts/build-netlify.mjs"
   },
   "dependencies": {
     "@base-ui/react": "1.7.0",
