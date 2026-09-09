@@ -11,6 +11,8 @@ npm ci
 npm run dev
 ```
 
+Development runs directly on Vite without Sites sign-in or a Cloudflare emulator. After a development configuration change, stop the existing terminal server and run `npm run dev` again.
+
 Open the Local URL printed by the server (normally http://localhost:3000). Install dependencies in a new checkout with `npm ci`; do not copy a dependency tree while recursively excluding folders named `dist`.
 
 ## Stack and structure

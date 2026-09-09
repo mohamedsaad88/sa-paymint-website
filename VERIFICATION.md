@@ -65,3 +65,9 @@ Independent engineering review identified the default build/start mismatch: ordi
 After a clean ordinary npm run build: TypeScript, lint and ten core tests passed; all 16 routes, links, anchors, images, 404 cases, sitemap, robots and the server-rendered Contact fallback passed against the static preview server. Every navigation .txt payload matched its generated file, and every JavaScript/CSS bundle returned the expected content type. Independent source re-review found no blocking issue in the correction.
 
 Browser access was retried on 9 September and again denied because the administrator policy check was unavailable. Hydration/interaction and the reported live deployment still cannot be signed off from these HTTP/source checks. Changes have not been pushed or deployed by this review.
+
+## Development configuration cleanup — 9 September 2026
+
+Normal development now uses Vinext and Tailwind without Sites sign-in, Cloudflare bindings or worker emulation. The dependency optimiser excludes next/link, next/navigation and lucide-react (with Vinext's own exclusion), preserving client boundaries. Package-only and internal-path exclusions did not resolve the warning; the optimiser manifest identified the next/link alias as the remaining bundled entry.
+
+A separate Vite instance using the final project configuration served all 16 routes, internal links/anchors, assets, 404 cases and contact fallback. Its fresh log contained neither the reported RSC optimisation warning nor the Sites sign-in message after all route requests. TypeScript, lint and the normal Netlify production build passed. The user-owned server on port 3000 was not stopped. Browser interaction verification remains a separate limitation.
