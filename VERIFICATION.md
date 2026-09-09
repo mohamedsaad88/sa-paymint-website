@@ -57,3 +57,11 @@ TypeScript, lint, all ten core tests, production build and all 16-route HTTP che
 Added a route-keyed fade/slide entrance without intercepting links, delaying navigation or changing router behavior. The homepage now uses the existing editorial image with slow camera motion, rotating business themes and a pause/play control. Animation begins only after hydration; server output is static. Reduced-motion preferences are read through a subscribed media-query store, and CSS disables motion when requested. No video or extra image download is introduced.
 
 The final corrected version passed TypeScript, lint, production build and the 16-route HTTP suite; ten core regression tests also passed during this revision. The static hero fallback and page-transition wrapper were verified in server-rendered HTML. Browser navigation timing, pause/resume and live reduced-motion behavior still require visual/browser QA, which remains blocked by the administrator policy check. Local-only delivery.
+
+## Standard Netlify build correction — 9 September 2026
+
+Independent engineering review identified the default build/start mismatch: ordinary build still targeted Cloudflare while only the alternate command exported a static site. The default build now invokes the verified static export, removes stale generated output first, and matches Netlify's build command. The legacy build:netlify command aliases build. Start now serves static dist/client files rather than Wrangler. Canonical defaults agree with Netlify.
+
+After a clean ordinary npm run build: TypeScript, lint and ten core tests passed; all 16 routes, links, anchors, images, 404 cases, sitemap, robots and the server-rendered Contact fallback passed against the static preview server. Every navigation .txt payload matched its generated file, and every JavaScript/CSS bundle returned the expected content type. Independent source re-review found no blocking issue in the correction.
+
+Browser access was retried on 9 September and again denied because the administrator policy check was unavailable. Hydration/interaction and the reported live deployment still cannot be signed off from these HTTP/source checks. Changes have not been pushed or deployed by this review.

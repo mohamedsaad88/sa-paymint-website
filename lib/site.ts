@@ -1,4 +1,4 @@
-const fallback = 'https://paymint-south-africa.eng-mohammedsaad.chatgpt.site';
+const fallback = 'https://paymintsa.netlify.app';
 export function validatedOrigin(value: string): string {
   const url = new URL(value);
   if (

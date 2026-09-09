@@ -1,5 +1,5 @@
 import { spawnSync } from 'node:child_process';
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, rmSync } from 'node:fs';
 import path from 'node:path';
 const origin = new URL(process.env.SITE_URL || 'https://paymintsa.netlify.app');
 if (
@@ -15,6 +15,7 @@ const pkg = JSON.parse(
   readFileSync('node_modules/vinext/package.json', 'utf8'),
 );
 const bin = typeof pkg.bin === 'string' ? pkg.bin : pkg.bin.vinext;
+rmSync('dist', { recursive: true, force: true });
 const result = spawnSync(
   process.execPath,
   [path.resolve('node_modules/vinext', bin), 'build'],

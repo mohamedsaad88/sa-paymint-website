@@ -1,12 +1,12 @@
 # Netlify deployment
 
-This repository uses Vinext on Vite. The default build targets Cloudflare Workers and is not a standalone static Netlify deployment. Use the dedicated export pipeline below.
+This repository uses Vinext on Vite. The default `npm run build` now produces a complete static Netlify deployment. No alternate build command is needed.
 
 ## Git-based deployment
 
 Commit and push the current changes, then redeploy the connected Netlify site. The root netlify.toml sets:
 
-- Build command: `npm run build:netlify`
+- Build command: `npm run build`
 - Publish directory: `dist/client`
 - Node: 22
 - SITE_URL: `https://paymintsa.netlify.app`
@@ -19,7 +19,7 @@ If a custom domain is added, update SITE_URL in netlify.toml and rebuild.
 
 ## Manual deployment
 
-Run `npm run build:netlify`. Upload the **contents of dist/client** (index.html must be at the upload root) to the existing Netlify site's deploys area. A prepared ZIP is at outputs/netlify-deploy.zip for this revision; it is a snapshot and must be regenerated after changes.
+Run `npm run build`. Upload the **contents of dist/client** (index.html must be at the upload root) to the existing Netlify site's deploys area. Use freshly generated dist/client contents after each build. npm start previews that exact directory locally.
 
 ## Validation limits
 
