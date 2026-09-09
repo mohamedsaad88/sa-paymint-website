@@ -71,3 +71,15 @@ Browser access was retried on 9 September and again denied because the administr
 Normal development now uses Vinext and Tailwind without Sites sign-in, Cloudflare bindings or worker emulation. The dependency optimiser excludes next/link, next/navigation and lucide-react (with Vinext's own exclusion), preserving client boundaries. Package-only and internal-path exclusions did not resolve the warning; the optimiser manifest identified the next/link alias as the remaining bundled entry.
 
 A separate Vite instance using the final project configuration served all 16 routes, internal links/anchors, assets, 404 cases and contact fallback. Its fresh log contained neither the reported RSC optimisation warning nor the Sites sign-in message after all route requests. TypeScript, lint and the normal Netlify production build passed. The user-owned server on port 3000 was not stopped. Browser interaction verification remains a separate limitation.
+
+## Synchronized hero images — 9 September 2026
+
+Added two unique editorial assets and synchronized each image/message pair in a single CSS scene animation. Inspected both generated assets directly. Normal production build passed with all 16 pages and referenced images verified; the static server passed the 16-route HTTP suite. TypeScript and lint passed. No dependency or deployment configuration changes.
+
+Rendered browser transitions, mobile appearance, pause/resume and reduced-motion interactions remain unverified because of the previously reported browser administrator policy restriction. Changes are local; no commit, push or deployment was performed.
+
+## Hero pacing and layout refinement — 9 September 2026
+
+Replaced the overlapping scene timelines with one seven-second progress animation that advances the current image and headline together. Images crossfade over 850ms; each headline enters over 650ms. Added selectable labeled progress controls, scene count, softer frame, and revised responsive typography. Selecting a scene pauses playback; Play resumes it. Hidden tabs pause the clock, and reduced-motion mode permits manual selection without autoplay. Removed image disclaimer captions site-wide at the user's request.
+
+TypeScript, lint and the normal production build passed, including the 16-page export and referenced-asset checks. Browser animation and responsive rendering remain unverified because of the previously reported administrator policy restriction. Changes remain local.

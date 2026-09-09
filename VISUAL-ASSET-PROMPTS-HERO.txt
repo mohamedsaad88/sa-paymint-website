@@ -1,0 +1,19 @@
+Built-in imagegen, one generation per asset. Both visually inspected.
+
+FINANCIAL WELLBEING
+Use case: photorealistic-natural
+Asset type: premium financial wellbeing website editorial hero, landscape 1536x1024 pixels.
+Primary request: A candid premium editorial photograph in a contemporary South African home. An adult woman with a light-to-medium skin tone thoughtfully uses her smartphone beside an open notebook for household planning. She looks calm and quietly confident, not stressed; natural unposed expression. Casual tasteful clothing, clearly domestic setting rather than an office.
+Scene/backdrop: Warm lived-in home, simple natural materials, subtle green details and a houseplant, softly sunlit window. Phone display faces her and cannot be read; notebook pages have no readable writing.
+Style/medium: Photorealistic professional lifestyle photography, realistic skin texture and anatomy, refined but authentic, gentle depth of field, warm natural light.
+Composition/framing: Landscape 3:2, exact target 1536x1024. Place the woman and phone interaction centrally in the upper two thirds, framed loosely enough to work as a narrow portrait center crop. Lower third is quieter table surface and soft shadow suitable for a text overlay added later. Preserve a complete head and natural hands.
+Constraints: No rendered text, UI, logos, watermark, currency, banknotes, corporate branding or implied real company facilities. Fictional AI editorial scene, no claim of depicting real PayMint customers or staff.
+
+SHARED OPPORTUNITY
+Use case: photorealistic-natural
+Asset type: premium shared economic opportunity website editorial hero, landscape 1536x1024 pixels.
+Primary request: An authentic contemporary South African urban commerce streetscape at golden hour. Small independent businesses and local shopfronts sit along a welcoming walkable street, with modern city buildings visible behind them. The real built environment communicates everyday economic activity and connection.
+Scene/backdrop: Human-scale storefronts with understated awnings, outdoor cafe seating and planted greenery, warm textured paving, a few small distant pedestrians only for scale. Modern South African city architecture in the background, natural plausible perspective. No person is prominent or the main subject.
+Style/medium: Premium photorealistic editorial architectural photography, authentic materials, crisp detail with soft atmospheric depth, natural warm sunlight and rich green accents.
+Composition/framing: Landscape 3:2, exact target 1536x1024. Center the street's perspective and visual activity in the upper two thirds so it also survives a narrow portrait center crop. Leave the lower third as calm foreground paving and natural shadow for text overlay added later. Balanced attractive urban composition, not aerial.
+Constraints: Fictional AI editorial scene, no claim of depicting real PayMint facilities. No readable text, fabricated branded signage, logos, watermark, prominent people, sci-fi graphics, glowing lines, digital overlays, impossible architecture or financial symbols. Businesses should be identified visually by their windows, seating and awnings rather than text.

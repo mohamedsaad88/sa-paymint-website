@@ -62,17 +62,6 @@ export function Visual({
 }) {
   if (!Object.hasOwn(visuals, name)) return null;
   const [image, description] = visuals[name as keyof typeof visuals];
-  const caption =
-    name === 'security' || name === 'platform'
-      ? 'AI-generated editorial illustration. Not PayMint’s actual facilities or platform.'
-      : [
-            'payouts',
-            'payroll',
-            'embedded-finance',
-            'financial-wellness',
-          ].includes(name)
-        ? 'AI-generated editorial illustration.'
-        : 'AI-generated editorial image. Not actual PayMint customers or staff.';
   return (
     <figure className={`image-visual human-visual visual-asset-${name}`}>
       <div className="visual-image-wrap">
@@ -86,7 +75,6 @@ export function Visual({
           decoding="async"
         />
       </div>
-      <figcaption>{caption}</figcaption>
     </figure>
   );
 }
